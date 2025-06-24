@@ -5,6 +5,7 @@ import copy
 
 with open('itemData.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
+    print(f"Loaded {len(data)} items from itemData.json.\n")
 
 def resolve_references(data_ref):
     def resolve_value(value_ref, ref_item, key_ref=None):
@@ -138,4 +139,4 @@ df.fillna(0, inplace=True)
 
 # Write to file in CSV format
 df.to_csv('itemData.csv', encoding='utf-8-sig', index=False)
-print("\nDataFrame saved to itemData.csv.")
+print(f"\nWritten {len(df)} items to itemData.csv.")
